@@ -38,12 +38,16 @@ jobs:
           format: YYYYMMDDHHmmss
           utcOffset: "+08:00"
 
+      - run: ls -alt
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: '${{ steps.artifact.outputs.formattedTime }}'
           path: dist
           if-no-files-found: error
+
+      - run: ls -alt
 
       - name: Start Cleavr Deployment
         uses: fjogeleit/http-request-action@master
