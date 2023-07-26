@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: '${{ steps.artifact.outputs.formattedTime }}'
-          path: build
+          path: dist
           if-no-files-found: error
 
       - name: Start Cleavr Deployment
